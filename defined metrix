@@ -1,0 +1,40 @@
+// write a program and print user defined metrix
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter number of rows: ");
+        int rows = scanner.nextInt();
+        System.out.print("Enter number of columns: ");
+        int col = scanner.nextInt();
+        int[][] metrix = new int[rows][col];
+
+        // Fill the metrix with user defined values
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < col; j++) {
+                System.out.print("Enter value for metrix[" + i + "][" + j + "]: ");
+                metrix[i][j] = scanner.nextInt();
+            }           
+        }
+        int sum = 0;
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < col; j++) {
+                if(i == j){
+                    sum += metrix[i][j];
+                }
+            }
+        
+        }
+        System.out.println("Sum of diagonal elements: " + sum);
+
+        
+        System.out.println("User Defined Metrix:");
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < col; j++) {
+                System.out.print(metrix[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+    
+}
